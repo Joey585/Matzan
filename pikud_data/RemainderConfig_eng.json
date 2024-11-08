@@ -1,0 +1,101 @@
+[
+  {
+    "cat": "missilealert",
+    "title": "Rocket and Missile Attacks",
+    "instructions": "Enter the protected space and stay in it for 10 minutes",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "ירי רקטות וטילים",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/rocket-and-missile-attacks/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "uav",
+    "title": "Infiltration of a Hostile Aerial Vehicle",
+    "instructions": "Enter the protected space immediately and stay in it for 10 minutes, unless another alert is received",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "כלי טיס עוין",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/infiltration-of-a-hostile-aerial-vehicle/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "cbrne",
+    "title": "Radiological Event",
+    "instructions": "Enter a building and close the doors and windows",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": null,
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "terrorattack",
+    "title": "Terrorist Infiltration",
+    "instructions": "Immediately enter a nearby building, lock the doors and close the windows",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "חדירת מחבלים",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/terrorist-infiltration/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "earthquakealert1",
+    "title": "Earthquake",
+    "instructions": "Immediately go out into the open. If not possible, enter the protected room or stairwell",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "רעידת אדמה",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/earthquake/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "earthquakealert2",
+    "title": "Earthquake",
+    "instructions": "Immediately go out into the open. If not possible, enter the protected room or stairwell",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "רעידת אדמה",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/earthquake/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "hazmat",
+    "title": "Hazardous Materials",
+    "instructions": "Immediately enter a nearby building and close the doors and windows",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "אירוע חומרים מסוכנים",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/hazardous-materials-event/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  },
+  {
+    "cat": "tsunami",
+    "title": "Fear of a Tsunami",
+    "instructions": "Immediately move at least one kilometer away from the beach or go up to a fourth floor and higher",
+    "eventManagementLink": null,
+    "lifeSavingGuidelinesLink": {
+      "target": "_self",
+      "name": "חשש לצונאמי",
+      "url": "https://www.oref.org.il/eng/life-saving-guidelines/fear-of-a-tsunami/",
+      "Type": "Content"
+    },
+    "ttlInMinutes": 10
+  }
+]
