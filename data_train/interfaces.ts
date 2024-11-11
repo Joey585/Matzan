@@ -299,3 +299,9 @@ export interface TwitterSearchQuery {
     querySource: string,
     product: "Top" | "Latest" | "People" | "Media" | "Lists"
 }
+
+export interface Prediction {
+    Urgency?: number,
+    Credibility?: number
+    error?: string
+}

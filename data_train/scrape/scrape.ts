@@ -1,6 +1,7 @@
 import config from "../config.json"
 import axios from "axios"
 import {ParsedTweetData, TimelineResult, TweetResult} from "../interfaces";
+import he from "he";
 
 const getRawTweetSearch = () => new Promise((resolve, reject): Promise<TimelineResult> | null => {
     const variables = generateQuery(2, 10, 50)
@@ -80,7 +81,7 @@ function generateQuery(minReplies: number, minLikes: number, count: number): str
 
 export function parseTweetText(rawTweet: string): string {
     const formatRegex = /(https:\/\/\S+)|([\u2700-\u27BF]|[\uE000-\uF8FF]|[\uD83C-\uDBFF\uDC00-\uDFFF])|(,)/g
-    return rawTweet.replaceAll(formatRegex, "").replaceAll(/(\n)/g, " ");
+    return he.decode(rawTweet.replaceAll(formatRegex, "").replaceAll(/(\n)/g, " "));
 }
 
 

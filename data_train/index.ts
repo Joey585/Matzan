@@ -4,6 +4,8 @@ import {listOfTweetsRaw, parseTweetText} from "./scrape/scrape";
 import fs from "fs"
 import * as mongoose from "mongoose";
 import {DataModel} from "./schema/data";
+import axios from "axios";
+import {Prediction} from "./interfaces";
 
 process.title = "Data Training";
 
@@ -33,6 +35,13 @@ client.on("messageCreate", async (message) => {
             if(await DataModel.findOne({id: randomTweet.tweet.id})) continue;
             const parsedText = parseTweetText(randomTweet.tweet.textRaw)
 
+            const prediction: Prediction = (await axios.post("http://localhost:5000/predict", {
+                text: parsedText,
+                followers: randomTweet.user.followers,
+                likes: randomTweet.tweet.likes,
+                retweets: randomTweet.tweet.retweets
+            })).data;
+
             const tweetEmbed = new EmbedBuilder()
                 .setTitle("Provide Tweet Scores")
                 .setDescription(parsedText)
@@ -42,6 +51,7 @@ client.on("messageCreate", async (message) => {
                     {name: "User's Followers", value: randomTweet.user.followers.toString(), inline: true},
                     {name: "Retweets", value: randomTweet.tweet.retweets.toString(), inline: true},
                 ])
+                .setFooter({text: `${prediction.error ? prediction.error : "ML Prediction: " + prediction.Urgency + "," + prediction.Credibility}`})
 
             const askMessage = await message.reply({content: "Provide your tweet scores with the following syntax:\n`urgency,credibility`\n**Say \"stop\" to end**\n", embeds: [tweetEmbed]})
 
@@ -59,10 +69,7 @@ client.on("messageCreate", async (message) => {
             await newData.save();
             i++;
         }
-
         message.channel.send(`You have finished the list of data!\n**You completed \`${i}\` out of \`${listTweets.length}\` tweets**`)
-
-
     }
 });
 

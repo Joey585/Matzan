@@ -34,6 +34,7 @@ X_train, X_test, y_train, y_test = train_test_split(x.values, y.values, test_siz
 
 scaler = MinMaxScaler(feature_range=(0,1))
 y_train_scaled = scaler.fit_transform(y_train)
+
 y_test_scaled = scaler.transform(y_test)
 
 model = Sequential([
